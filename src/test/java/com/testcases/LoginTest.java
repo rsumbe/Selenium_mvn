@@ -1,9 +1,12 @@
 package com.testcases;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.WebDriver;
+
+import java.net.URL;
 import java.time.Duration;
 
 public class LoginTest {
@@ -23,7 +26,9 @@ public class LoginTest {
         options.addArguments("--start-maximized");
 
 
-        WebDriver driver=new ChromeDriver(options);
+//        WebDriver driver=new ChromeDriver(options);
+
+        driver = new RemoteWebDriver(new URL("https://de49-42-104-100-108.ngrok-free.app/wd/hub"), options);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
