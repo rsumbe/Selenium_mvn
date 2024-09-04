@@ -30,9 +30,9 @@ public class LoginTest {
 
         driver = new RemoteWebDriver(new URL("https://de49-42-104-100-108.ngrok-free.app/wd/hub"), options);
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
 
         driver.manage().window().maximize();
 
