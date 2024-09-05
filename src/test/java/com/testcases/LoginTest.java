@@ -28,7 +28,16 @@ public class LoginTest {
 
 //        WebDriver driver=new ChromeDriver(options);
 
-        driver = new RemoteWebDriver(new URL("https://de49-42-104-100-108.ngrok-free.app/wd/hub"), options);
+//        driver = new RemoteWebDriver(new URL("https://de49-42-104-100-108.ngrok-free.app/wd/hub"), options);
+
+//        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+
+//        ChromeOptions options = new ChromeOptions();
+        //options.addArguments("--remote-debugging-port=9222");
+        options.addArguments("--headless"); // Run in headless mode
+        options.addArguments("--no-sandbox"); // Bypass the sandbox
+        options.addArguments("--disable-dev-shm-usage"); // Overcome limited resource problems
+        driver = new ChromeDriver(options);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 
